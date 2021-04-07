@@ -14,6 +14,8 @@ State: The history of prior successful recommendations to each customer.
 Reward: 1 if the customer buys the item or 0 if not. The purchasing probability is given by the customers interest in the recommended category. 
 # Implementation Details
 Since the actions of the model are discrete a DQN should work well in modelling the system. The DQN was implemented as fully connected neural network with an input size of the number of categories multiplied by the customer history window size. This window size is the number of last successful recommendations the model looks at when deciding to recommend the next item. The model has three hidden layers of size 100 and an output layer of size 31. Each layer was followed by a ReLU activation function and a batch normalization. The optimizer that was used was the Adam optimizer with weight decay and a learning rate of 0.001. The exploration rate stated of at 0.9 and was exponentially decreased to 0.05 during training. The discount factor gamma was set to 0.5, this is much lower than 1 due to the fact the system has no end state. All shown data was generated with a customer pool with the size of 400.
+
 ![Alt text](./trial_run.png)
+
 # Outlook 
 An improvement to make the system more realistic is studying a more dynamic customer pool where new customers without a purchasing history replace old ones. Furthermore, the current model throws away past purchase information if it exceeds the input size of the neural network which is a non-ideal use of state information. This can potentially be remedied using a RNN or a 1-D CNN with padding. Further Hyperparameter study could also lead to improvements in model performance. 
