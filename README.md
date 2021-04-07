@@ -1,5 +1,5 @@
 # Interest Recommender 
-The aim of this project was to build a recommender system that is based on a DQN. Since I do not have access to a live webservice building an environment was a necessity. 
+The aim of this project was to build a recommender system that is based on a DQN. Since I do not have access to a live webservice building an environment was a necessity. While this might not be realistic it still serves as a great exercise for me to learn the way reinforcement learning is used in recommender systems.
 # Building an Environment:
 To model realistic customers, a British youth survey was selected which asked 836 British teenagers to score 31 interests from one to five. Assuming the distribution to be gaussian a covariance matrix was extracted. Based on this realistically distributed customers can be sampled as needed. 
 To add further realism, complexity and to distinguish the problem from a n-armed bandit problem, a short and a long term dynamic was introduced that modulate the interest of the customers. 
